@@ -7,6 +7,81 @@
     <title>Document</title>
   </head>
   <body>
-    <main></main>
+    <main>
+      <section>
+        <img src="./src/img/t-shirt.svg" alt="" />
+      </section>
+
+      <form action="/shopping-cart" method="POST">
+        <fieldset>
+          <legend>T-shirt fit</legend>
+
+          <div>
+            <label for="male">Male</label>
+            <input type="radio" name="size-options" id="male" value="male" checked />
+          </div>
+
+          <div>
+            <label for="female">Female</label>
+            <input type="radio" name="size-options" id="female" value="female" />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Size</legend>
+
+          <div>
+            <label for="small">Small</label>
+            <input type="radio" name="size-options" id="small" value="small" checked />
+          </div>
+
+          <div>
+            <label for="medium">Medium</label>
+            <input type="radio" name="size-options" id="medium" value="medium" />
+          </div>
+
+          <div>
+            <label for="large">Large</label>
+            <input type="radio" name="size-options" id="large" value="large" />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Color</legend>
+
+          <div>
+            <label for="white">White</label>
+            <input type="radio" name="color-options" id="white" value="white" checked />
+          </div>
+
+          <div>
+            <label for="black">Black</label>
+            <input type="radio" name="color-options" id="black" value="black" />
+          </div>
+
+          <div>
+            <label for="green">Green</label>
+            <input type="radio" name="color-options" id="green" value="green" />
+          </div>
+
+          <div>
+            <label for="yellow">Yellow</label>
+            <input type="radio" name="color-options" id="yellow" value="green" />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Text</legend>
+
+          <input type="text" name="t-shirt-text" id="text" />
+        </fieldset>
+
+        <fieldset>
+          <legend>Image</legend>
+
+          <input type="file" name="image" id="image" />
+        </fieldset>
+      </form>
+    </main>
   </body>
 </html>
