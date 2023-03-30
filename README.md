@@ -29,15 +29,15 @@ De gebruiker:
 
 ### Functional laag
 
-Uitleg hier
+HTML forms
 
 ### Usable laag
 
-Uitleg hier
+CSS
 
 ### Pleasurable laag
 
-Uitleg hier
+Local storage
 
 ## Geteste browsers
 

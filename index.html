@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="./src/js/index.js" defer></script>
   </head>
   <body>
     <main>
@@ -12,18 +13,18 @@
         <img src="./src/img/t-shirt.svg" alt="" />
       </section>
 
-      <form action="/shopping-cart" method="POST">
+      <form>
         <fieldset>
           <legend>T-shirt fit</legend>
 
           <div>
             <label for="male">Male</label>
-            <input type="radio" name="size-options" id="male" value="male" checked />
+            <input class="local-storage-input" type="radio" name="fit-options" id="male" value="male" checked />
           </div>
 
           <div>
             <label for="female">Female</label>
-            <input type="radio" name="size-options" id="female" value="female" />
+            <input class="local-storage-input" type="radio" name="fit-options" id="female" value="female" />
           </div>
         </fieldset>
 
@@ -32,17 +33,17 @@
 
           <div>
             <label for="small">Small</label>
-            <input type="radio" name="size-options" id="small" value="small" checked />
+            <input class="local-storage-input" type="radio" name="size-options" id="small" value="small" checked />
           </div>
 
           <div>
             <label for="medium">Medium</label>
-            <input type="radio" name="size-options" id="medium" value="medium" />
+            <input class="local-storage-input" type="radio" name="size-options" id="medium" value="medium" />
           </div>
 
           <div>
             <label for="large">Large</label>
-            <input type="radio" name="size-options" id="large" value="large" />
+            <input class="local-storage-input" type="radio" name="size-options" id="large" value="large" />
           </div>
         </fieldset>
 
@@ -51,36 +52,38 @@
 
           <div>
             <label for="white">White</label>
-            <input type="radio" name="color-options" id="white" value="white" checked />
+            <input class="local-storage-input" type="radio" name="color-options" id="white" value="white" checked />
           </div>
 
           <div>
             <label for="black">Black</label>
-            <input type="radio" name="color-options" id="black" value="black" />
+            <input class="local-storage-input" type="radio" name="color-options" id="black" value="black" />
           </div>
 
           <div>
             <label for="green">Green</label>
-            <input type="radio" name="color-options" id="green" value="green" />
+            <input class="local-storage-input" type="radio" name="color-options" id="green" value="green" />
           </div>
 
           <div>
             <label for="yellow">Yellow</label>
-            <input type="radio" name="color-options" id="yellow" value="green" />
+            <input class="local-storage-input" type="radio" name="color-options" id="yellow" value="yellow" />
           </div>
         </fieldset>
 
         <fieldset>
           <legend>Text</legend>
 
-          <input type="text" name="t-shirt-text" id="text" />
+          <input class="local-storage-input" type="text" name="t-shirt-text" id="text" />
         </fieldset>
 
         <fieldset>
           <legend>Image</legend>
 
-          <input type="file" name="image" id="image" />
+          <input type="file" accept="image/png, image/jpeg" name="image" id="image" />
         </fieldset>
+
+        <button type="submit">Add to cart</button>
       </form>
     </main>
   </body>
