@@ -19,16 +19,53 @@ const writeLocalStorage = () => {
       console.log(localStorage.getItem(input.name));
     });
   });
+
+  // Add event listener to the image input
+  imageInput.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      if (FileReader === void 0) return; // Return if the FileReader API is not supported by the browser
+
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        const base64String = e.target.result;
+
+        localStorage.setItem("image-option", base64String);
+      };
+
+      reader.readAsDataURL(file);
+    } else {
+      localStorage.setItem("image-option", "");
+    }
+  });
 };
 
 const readLocalStorage = () => {
   if (Storage === void 0) return; // Return if local storage is not supported by the browser
 
   const text = localStorage.getItem("text-option");
+  const image = localStorage.getItem("image-option");
 
   if (text) {
     tShirtText.textContent = text;
     textInput.value = text;
+  }
+
+  if (image) {
+    tShirtImage.src = image;
+
+    if (DataTransfer === void 0) return; // Return if the DataTransfer API is not supported by the browser
+
+    fetch(image)
+      .then((res) => res.blob())
+      .then((blob) => {
+        const dt = new DataTransfer();
+
+        dt.items.add(new File([blob], "Image", { type: "image/png" }));
+        imageInput.files = dt.files; // Add the image file saved in local storage to the file input
+      });
   }
 
   options.forEach((option) => {
