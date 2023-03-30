@@ -4,6 +4,8 @@ const textInput = document.querySelector(".text-input");
 const tShirtText = document.querySelector(".t-shirt-text");
 const colorInputs = document.querySelectorAll(".color-input");
 const tShirt = document.querySelector(".t-shirt");
+const imageInput = document.querySelector(".image-input");
+const tShirtImage = document.querySelector(".t-shirt-image");
 
 const writeLocalStorage = () => {
   if (Storage === void 0) return; // Return if local storage is not supported by the browser
@@ -46,13 +48,25 @@ const setTShirtColor = () => {
   tShirt.style.fill = color;
 };
 
+const setTShirtImage = (e) => {
+  const file = e.target.files[0];
+
+  if (file) {
+    tShirtImage.src = URL.createObjectURL(file);
+  } else {
+    tShirtImage.src = "";
+  }
+};
+
 writeLocalStorage();
 readLocalStorage();
 setTShirtColor();
 
 // Add event listeners
-textInput.addEventListener("input", (e) => (tShirtText.textContent = e.target.value));
-
 colorInputs.forEach((input) => {
   input.addEventListener("change", (e) => (tShirt.style.fill = e.target.value));
 });
+
+textInput.addEventListener("input", (e) => (tShirtText.textContent = e.target.value));
+
+imageInput.addEventListener("input", setTShirtImage);
